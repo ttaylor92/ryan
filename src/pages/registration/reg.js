@@ -1,9 +1,8 @@
 import "date-fns";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import DateFnsUtils from "@date-io/date-fns";
 import {
   MuiPickersUtilsProvider,
-  KeyboardTimePicker,
   KeyboardDatePicker
 } from "@material-ui/pickers";
 
@@ -14,7 +13,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Link from "@material-ui/core/Link";
@@ -35,7 +33,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        DonutFactory Corp.
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -98,7 +96,6 @@ const initialValues = {
 
 export default function Registration() {
   //states
-  const inputLabel = useRef(null);
   const [labelWidth, setLabelWidth] = React.useState(0);
   const [selectedDate, setSelectedDate] = React.useState(
     new Date("2014-08-18T21:11:54")

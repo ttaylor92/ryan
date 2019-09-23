@@ -1,15 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.sass";
 
 //Components
-import Homepage from './pages/homepage/home';
-import Animations from './pages/animations/anim';
-import Registration from './pages/registration/reg';
-import Navbar from './components/navbar/nav'
+import Homepage from "./pages/homepage/home";
+import Animations from "./pages/animations/anim";
+import Registration from "./pages/registration/reg";
+import Navbar from "./components/navbar/nav";
 
-class App extends React.Component{
-  render(){
-    return(
+class App extends React.Component {
+  render() {
+    return (
       <Router>
         <Navbar />
         <div className="container">
@@ -20,7 +21,7 @@ class App extends React.Component{
           </Switch>
         </div>
       </Router>
-    )
+    );
   }
 }
 

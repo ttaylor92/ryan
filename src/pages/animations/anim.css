@@ -1,0 +1,337 @@
+#bouncing_wrapper {
+  width: 100%;
+  height: 150px;
+  background: #000;
+}
+/*Common styles for balls*/
+#ball-one,
+#ball-two,
+#ball-three,
+#ball-four,
+#ball-five {
+  box-shadow: inset -10px -30px rgba(0, 0, 0, 0.08);
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border-radius: 100%;
+}
+#ball-one {
+  width: 100px;
+  height: 100px;
+  background-color: #0bdce9;
+  margin: 0 400px;
+  margin-top: 255px;
+}
+
+#ball-two {
+  width: 80px;
+  height: 80px;
+  background-color: #0afb3d;
+  margin-top: -80px;
+  margin-left: 50px;
+}
+
+#ball-three {
+  width: 90px;
+  height: 90px;
+  background-color: #ff00f6;
+  margin-left: 300px;
+  margin-top: -90px;
+}
+
+#ball-four {
+  width: 60px;
+  height: 60px;
+  background-color: #cc0000;
+  margin-left: 180px;
+  margin-top: -90px;
+}
+
+#ball-five {
+  width: 120px;
+  height: 120px;
+  background-color: #ffcc00;
+  margin-left: 650px;
+  margin-top: -90px;
+}
+
+.bounce {
+  animation: bounce 8s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-200px);
+  }
+  5% {
+    -webkit-transform: translateY(0px);
+  }
+  15% {
+    -webkit-transform: translateY(-170px);
+  }
+  30% {
+    -webkit-transform: translateY(0px);
+  }
+  40% {
+    -webkit-transform: translateY(-140px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+  }
+  60% {
+    -webkit-transform: translateY(-110px);
+  }
+  70% {
+    -webkit-transform: translateY(0%);
+  }
+  80% {
+    -webkit-transform: translateY(-50px);
+  }
+  90% {
+    -webkit-transform: translateY(0);
+  }
+  95% {
+    -webkit-transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+/*Animation for second round*/
+.bounce1 {
+  animation: bounce 5s ease-in-out infinite;
+}
+@keyframes bounce1 {
+  0% {
+    -webkit-transform: translateY(-200px);
+  }
+  5% {
+    -webkit-transform: translateY(0px);
+  }
+  15% {
+    -webkit-transform: translateY(-170px);
+  }
+  30% {
+    -webkit-transform: translateY(0px);
+  }
+  40% {
+    -webkit-transform: translateY(-140px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+  }
+  60% {
+    -webkit-transform: translateY(-110px);
+  }
+  70% {
+    -webkit-transform: translateY(0%);
+  }
+  80% {
+    -webkit-transform: translateY(-50px);
+  }
+  90% {
+    -webkit-transform: translateY(0);
+  }
+  95% {
+    -webkit-transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+/*Animation for third round*/
+.bounce2 {
+  animation: bounce 3s ease-in-out infinite;
+}
+@keyframes bounce2 {
+  0% {
+    -webkit-transform: translateY(-200px);
+  }
+  5% {
+    -webkit-transform: translateY(0px);
+  }
+  15% {
+    -webkit-transform: translateY(-170px);
+  }
+  30% {
+    -webkit-transform: translateY(0px);
+  }
+  40% {
+    -webkit-transform: translateY(-140px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+  }
+  60% {
+    -webkit-transform: translateY(-110px);
+  }
+  70% {
+    -webkit-transform: translateY(0%);
+  }
+  80% {
+    -webkit-transform: translateY(-50px);
+  }
+  90% {
+    -webkit-transform: translateY(0);
+  }
+  95% {
+    -webkit-transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+/*Animation for fourth round*/
+
+.bounce3 {
+  animation: bounce 3s ease-in-out infinite;
+}
+@keyframes bounce3 {
+  0% {
+    -webkit-transform: translateY(-200px);
+  }
+  5% {
+    -webkit-transform: translateY(0px);
+  }
+  15% {
+    -webkit-transform: translateY(-170px);
+  }
+  30% {
+    -webkit-transform: translateY(0px);
+  }
+  40% {
+    -webkit-transform: translateY(-140px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+  }
+  60% {
+    -webkit-transform: translateY(-110px);
+  }
+  70% {
+    -webkit-transform: translateY(0%);
+  }
+  80% {
+    -webkit-transform: translateY(-50px);
+  }
+  90% {
+    -webkit-transform: translateY(0);
+  }
+
+  95% {
+    -webkit-transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+/*Animation for fifth round*/
+
+.bounce4 {
+  animation: bounce 3s ease-in-out infinite;
+}
+@keyframes bounce4 {
+  0% {
+    -webkit-transform: translateY(-200px);
+  }
+  5% {
+    -webkit-transform: translateY(0px);
+  }
+  15% {
+    -webkit-transform: translateY(-170px);
+  }
+  30% {
+    -webkit-transform: translateY(0px);
+  }
+  40% {
+    -webkit-transform: translateY(-140px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+  }
+  60% {
+    -webkit-transform: translateY(-110px);
+  }
+  70% {
+    -webkit-transform: translateY(0%);
+  }
+  80% {
+    -webkit-transform: translateY(-50px);
+  }
+  90% {
+    -webkit-transform: translateY(0);
+  }
+  95% {
+    -webkit-transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+
+.ball,
+.ball2 {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-animation-name: bounceball;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-delay: 0;
+  -webkit-animation-timing-function: ease-out;
+
+  animation-name: bounceball;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 0;
+
+  animation-timing-function: ease-out;
+
+  animation-play-state: running;
+  animation-fill-mode: none;
+  background-size: 160px 160px;
+}
+@keyframes bounceball {
+  from {
+    bottom: 0;
+    height: 90px;
+    background-size: 160px 90px;
+  }
+  10% {
+    bottom: 0;
+    height: 160px;
+    background-size: 160px 160px;
+  }
+  to {
+    bottom: 50%;
+  }
+}
+
+.demo2 {
+  width: 50%;
+  height: 300px;
+  position: relative;
+  float: left;
+}
+.demo-wrap {
+  width: 68%;
+  float: left;
+}
+
+/* //     background: #f2f2f2
+//     height: 100vh
+
+// .item
+//     width: 200px
+//     height: 200px
+//     background: white
+//     margin: auto
+//     .inner
+//         height: 190px
+//         width: 190px
+//         margin: auto */
