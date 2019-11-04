@@ -1,6 +1,7 @@
 import "date-fns";
 import React, { useState } from "react";
 import DateFnsUtils from "@date-io/date-fns";
+import $ from "jquery";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
@@ -27,6 +28,8 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import InputLabel from "@material-ui/core/InputLabel";
 
 function Copyright() {
   return (
@@ -94,6 +97,20 @@ const initialValues = {
   marital: "single"
 };
 
+const initialErrors = {
+  firstName: "",
+  lastName: "",
+  userName: "",
+  phoneNumber: "",
+  email: "",
+  password: "",
+  repeatPassword: "",
+  address1: "",
+  state: "",
+  city: "",
+  zipCode: ""
+};
+
 export default function Registration() {
   //states
   const [labelWidth, setLabelWidth] = React.useState(0);
@@ -118,12 +135,38 @@ export default function Registration() {
     marital: "single"
   });
 
+  const [errors, setErrors] = useState({
+    firstName: "",
+    lastName: "",
+    userName: "",
+    phoneNumber: "",
+    email: "",
+    password: "",
+    repeatPassword: "",
+    address1: "",
+    address2: "",
+    state: "",
+    city: "",
+    zipCode: ""
+  });
+
   const classes = useStyles();
 
   function submitHandler(e) {
     e.preventDefault();
-
     console.log(values);
+
+    $.ajax({
+      data: values,
+      type: "POST",
+      url: "http://localhost:1337/",
+      success: function(data) {
+        console.log(JSON.parse(data));
+      },
+      error: function(xhr, status, err) {
+        console.error(status, err.toString());
+      }
+    });
   }
 
   function handleDateChange(date) {
@@ -135,13 +178,13 @@ export default function Registration() {
 
     setValues(values => ({
       ...values,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      numFix: ""
     }));
-
-    // console.log(e.target.name, e.target.value);
   }
 
   function resetHandler() {
+    setErrors(initialErrors);
     setValues(initialValues);
   }
 
@@ -171,6 +214,8 @@ export default function Registration() {
                   autoComplete="userName"
                   onChange={handleChange}
                   value={values.userName}
+                  helperText={errors.userName}
+                  error={errors.userName ? true : false}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -184,6 +229,8 @@ export default function Registration() {
                   autoFocus
                   onChange={handleChange}
                   value={values.firstName}
+                  helperText={errors.firstName}
+                  error={errors.firstName ? true : false}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -197,6 +244,8 @@ export default function Registration() {
                   autoComplete="lname"
                   onChange={handleChange}
                   value={values.lastName}
+                  helperText={errors.lastName}
+                  error={errors.lastName ? true : false}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -210,6 +259,8 @@ export default function Registration() {
                   autoComplete="phoneNumber"
                   onChange={handleChange}
                   value={values.phoneNumber}
+                  helperText={errors.phoneNumber}
+                  error={errors.phoneNumber ? true : false}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -223,6 +274,8 @@ export default function Registration() {
                   autoComplete="email"
                   onChange={handleChange}
                   value={values.email}
+                  helperText={errors.email}
+                  error={errors.email ? true : false}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -237,6 +290,8 @@ export default function Registration() {
                   autoComplete="current-password"
                   onChange={handleChange}
                   value={values.password}
+                  helperText={errors.password}
+                  error={errors.password ? true : false}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -251,6 +306,8 @@ export default function Registration() {
                   autoComplete="current-password"
                   onChange={handleChange}
                   value={values.repeatPassword}
+                  helperText={errors.repeatPassword}
+                  error={errors.repeatPassword ? true : false}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -264,6 +321,8 @@ export default function Registration() {
                   autoComplete="address1"
                   onChange={handleChange}
                   value={values.address1}
+                  helperText={errors.address1}
+                  error={errors.address1 ? true : false}
                 />
               </Grid>
             </Grid>
@@ -294,6 +353,8 @@ export default function Registration() {
                   autoComplete="city"
                   onChange={handleChange}
                   value={values.city}
+                  helperText={errors.city}
+                  error={errors.city ? true : false}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -313,7 +374,11 @@ export default function Registration() {
                 </MuiPickersUtilsProvider>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <FormControl variant="outlined">
+                <FormControl
+                  variant="outlined"
+                  error={errors.state ? true : false}
+                >
+                  <InputLabel htmlFor="state-error">State</InputLabel>
                   <Select
                     value={values.state}
                     onChange={handleChange}
@@ -331,6 +396,7 @@ export default function Registration() {
                     <MenuItem value="AK">Alaska</MenuItem>
                     <MenuItem value="AZ">Arizona</MenuItem>
                     <MenuItem value="AR">Arkansas</MenuItem>
+                    <FormHelperText>{errors.state}</FormHelperText>
                   </Select>
                 </FormControl>
               </Grid>
@@ -345,6 +411,8 @@ export default function Registration() {
                   autoComplete="zipCode"
                   onChange={handleChange}
                   value={values.zipCode}
+                  helperText={errors.zipCode}
+                  error={errors.zipCode ? true : false}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
